@@ -6,40 +6,16 @@ body {
 
 button {
   cursor: pointer;
-}
-
-.header {
-  background-color: #1E90FF;
-  border-radius: 99px 99px 0 0 ;
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 40px 20px 20px;
-  text-align: right;
-  width: 100%;
-}
-
-.header__items {
-  margin: 0 auto;
-}
-
-.header__button {
-  display: inline-block;
-  color: white;
-  font-size: 60px;
-  padding: 0;
-}
-
-.header__button:hover {
-  background-color: rgb(248, 249, 250, 20%);
-  border-radius: 99px;
-  display: inline-block;
+  border: none;
 }
 
 table {
   background-color: #1E90FF;
+  border-radius: 99px 99px 0 0;
   color: white;
   margin: 0 auto;
   max-width: 600px;
+  padding-top: 100px;
   width: 100%;
 }
 
@@ -57,7 +33,7 @@ table {
 
 .thead__month {
   font-family: 'Montserrat', sans-serif;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
   padding: 0 50px;
 }
@@ -124,11 +100,41 @@ table {
   padding: 16px 0;
 }
 
+.add {
+  background-color: #1E90FF;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: right;
+}
+
+.add__buttonWrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.add__button {
+  background-color: white;
+  border-radius: 999px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  color: #1E90FF;
+  display: inline-block;
+  font-size: 65px;
+  outline: none;
+  padding: 0 17px;
+}
+
+.add__button:hover {
+  border-radius: 99px;
+  display: inline-block;
+  height: auto;
+}
+
 .list {
   background-color: #1E90FF;
   margin: 0 auto;
   max-width: 600px;
   padding-top: 30px;
+  padding-bottom: 40px;
 }
 
 .list__container {
