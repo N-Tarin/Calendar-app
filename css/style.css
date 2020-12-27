@@ -39,11 +39,13 @@ table {
 }
 
 .thead__prev {
+  cursor: pointer;
   font-size: 20px;
   font-weight: bold;
 }
 
 .thead__next {
+  cursor: pointer;
   font-size: 20px;
   font-weight: bold;
 }
