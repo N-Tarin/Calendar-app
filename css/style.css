@@ -90,6 +90,10 @@ table {
   width: 100%;
 }
 
+.-prev, .-next {
+  opacity: 0.32;
+}
+
 .js__today {
   background-color: white;
   border-radius: 999px;
