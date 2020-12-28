@@ -22,21 +22,21 @@ button {
 .month__items {
   display: flex;
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .monthNow {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: bold;
-  padding: 0 50px;
+  padding: 0 80px;
 }
 
 .monthPrev i, .monthNext i {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  padding: 13px;
+  padding: 7px;
 }
 
 table {
@@ -91,7 +91,7 @@ table {
 }
 
 .-prev, .-next {
-  opacity: 0.32;
+  opacity: 0.3;
 }
 
 .js__today {
@@ -168,6 +168,6 @@ table {
 
 .list__item:last-child {
   border-radius: 0 0 10px 10px;
-}
+  }
 
 
