@@ -9,7 +9,7 @@ button {
   border: none;
 }
 
-table {
+.month {
   background-color: #1E90FF;
   border-radius: 99px 99px 0 0;
   color: white;
@@ -19,35 +19,32 @@ table {
   width: 100%;
 }
 
-.thead {
-  margin: 0 auto;
-  text-align: center;
-  width: 100%; 
+.month__items {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 
-.thead__title {
-  display: inline-block;
-  padding-bottom: 40px;
-  text-align: center;
-}
-
-.thead__month {
+.monthNow {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: bold;
   padding: 0 50px;
 }
 
-.thead__prev {
+.monthPrev i, .monthNext i {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
+  padding: 13px;
 }
 
-.thead__next {
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
+table {
+  background-color: #1E90FF;
+  color: white;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
 }
 
 .tbody {

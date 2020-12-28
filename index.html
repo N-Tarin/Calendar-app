@@ -12,27 +12,23 @@
 </head>
 <body>
 
-  <section class="main">
+  <section class="month">
+    <div class="month__items">
+      <span class="month__item monthPrev">
+        <i class="fas fa-chevron-left"></i>
+      </span><!-- /.month__item monthPrev -->
+      <h2 id="month" class="month__item monthNow">
+      </h2><!-- /.month__item monthNow -->
+      <span class="month__item monthNext">
+        <i class="fas fa-chevron-right"></i>
+      </span><!-- /.month__item monthNext-->
+    </div><!-- /.month__items -->
+  </section><!-- /.month -->
+
+  <section class="calendar">
     <table class="table">
       
       <thead class="thead">
-        <tr class="thead__title">
-          <th id="prev" class="thead__prev">
-            <i class="fas fa-chevron-left"></i>
-          </th><!-- /.thead__prev -->
-
-          <th id="month" class="thead__month">
-            December
-          </th><!-- /.thead__month -->
-          
-          <th id="next" class="thead__next">
-            <i class="fas fa-chevron-right"></i>
-          </th><!-- /.thead__next -->
-
-        </tr><!-- /.thead__title -->
-      </thead><!-- /.thead -->
-  
-      <tbody class="tbody">
         <tr class="tbody__weeks">
           <th class="tbody__week">
             Sun
@@ -56,7 +52,9 @@
             Sat
           </th><!-- /.tbody__week -->
         </tr><!-- /.tbody__weeks -->
-        
+      </thead><!-- /.thead -->
+      
+      <tbody class="tbody">
         <tr class="tbody__days">
           <td class="tbody__day">
             １
@@ -81,81 +79,10 @@
           </td><!-- /.tbody__day -->
         </tr><!-- /.tbody__days -->
 
-        <tr class="tbody__days">
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day month">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-        </tr><!-- /.tbody__days -->
-        
-        <tr class="tbody__days">
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-        </tr><!-- /.tbody__days -->
-        
-        <tr class="tbody__days">
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-          <td class="tbody__day">
-            １
-          </td><!-- /.tbody__day -->
-        </tr><!-- /.tbody__days -->
       </tbody><!-- /.tbody -->
   
     </table><!-- /. table -->
-  </section><!-- /.main -->
+  </section><!-- /.calendar -->
 
   <section class="add">
     <div class="add__buttonWrapper">
