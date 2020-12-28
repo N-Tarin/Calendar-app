@@ -22,7 +22,7 @@ button {
 .month__items {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 .monthNow {
