@@ -3,7 +3,32 @@
 const today = new Date();
 const currentYear = today.getFullYear();
 const currentMonth = today.getMonth();
-const currentToday = today.getDate();
+const weeks = [
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed', 
+  'Thu', 
+  'Fri', 
+  'Sat'
+];
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+let dayCount = 1 // 日にちのカウント
+let calendarHtml = '' // HTMLを組み立てる変数
+
 
 const showCalendar = () => {
 
@@ -17,39 +42,8 @@ const showCalendar = () => {
 
   //前月の日付を取得
   const lastMonthEndDate = new Date(currentYear, currentMonth, 0) 
-  const lastMonthEndDay = lastMonthEndDate.getDate() // 前月の末日
+  const lastMonthEndDay = lastMonthEndDate.getDate()
 
-  //翌月の日付取得
-  const nextMonthStartDate = new Date(currentYear, currentMonth, 0) 
-  const nextMonthStartDay = nextMonthStartDate.getDate()
-
-
-  let dayCount = 1 // 日にちのカウント
-  let calendarHtml = '' // HTMLを組み立てる変数
-
-  const weeks = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed', 
-    'Thu', 
-    'Fri', 
-    'Sat'
-  ];
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
 
   //現在の月を表示
   const month = document.getElementById('month');
@@ -70,26 +64,24 @@ const showCalendar = () => {
   //日にちを作成
   calendarHtml += '<tbody class="tbody">'
   for (let w = 0; w < 6; w++) {
-      calendarHtml += '<tr class="tbody__days">'
+    calendarHtml += '<tr class="tbody__days">'
 
-      for (let d = 0; d < 7; d++) {
-          if (w == 0 && d < startDay) {
-              // 1行目で1日の曜日の前
-              let num = lastMonthEndDay - startDay + d + 1
-              calendarHtml += '<td class="tbody__day -next">' + num + '</td>'
+    for (let d = 0; d < 7; d++) {
+      if (w == 0 && d < startDay) {
+        let num = lastMonthEndDay - startDay + d + 1
+        calendarHtml += '<td class="tbody__day -next">' + num + '</td>'
 
-            } else if (dayCount > endDay) {
-              // 末尾の日数を超えた
-              let num = dayCount - endDay
-              calendarHtml += '<td class="tbody__day -next">' + num + '</td>'
-              dayCount++
+      } else if (dayCount > endDay) {
+        let num = dayCount - endDay
+        calendarHtml += '<td class="tbody__day -next">' + num + '</td>'
+        dayCount++
 
-          } else {
-              calendarHtml += '<td class="tbody__day">' + dayCount + '</td>'
-              dayCount++
-          }
+      } else {
+        calendarHtml += '<td class="tbody__day">' + dayCount + '</td>'
+        dayCount++
       }
-      calendarHtml += '</tr>'
+    }
+  calendarHtml += '</tr>'
   }
   calendarHtml += '</tbody>';
   calendarHtml += '</table>';
@@ -99,12 +91,14 @@ const showCalendar = () => {
 };
 
 
+//先月を表示
 const prev = document.querySelector('.monthPrev i');
 prev.addEventListener('click', () => {
   today.setMonth(currentMonth - 1);
   showCalendar();
 });
 
+//来月を表示
 const next = document.querySelector('.monthNext i');
 next.addEventListener('click', () => {
   today.setMonth(currentMonth + 1);
