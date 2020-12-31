@@ -84,7 +84,7 @@ button {
 .add {
   background-color: #1E90FF;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 .add__buttonWrapper {
@@ -114,13 +114,13 @@ button {
 .list {
   background-color: #1E90FF;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 
 .list__container {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 530px;
 }
 
 .list__items {
