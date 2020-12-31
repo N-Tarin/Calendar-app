@@ -7,90 +7,68 @@ body {
 button {
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
-.month {
+.calendar {
   background-color: #1E90FF;
   border-radius: 99px 99px 0 0;
   color: white;
   margin: 0 auto;
-  max-width: 600px;
   padding-top: 100px;
-  width: 100%;
 }
 
-.month__items {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 40px;
+.table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.table__head {
+}
+
+.table__head__items {
+  margin-bottom: 40px;
+}
+
+.table__head__item {
+  font-weight: bold;
 }
 
 .monthNow {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  font-weight: bold;
-  padding: 0 80px;
 }
 
 .monthPrev i, .monthNext i {
   cursor: pointer;
   font-size: 30px;
-  font-weight: bold;
-  padding: 7px;
 }
 
-table {
-  background-color: #1E90FF;
-  color: white;
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
-}
-
-.tbody {
-  max-width: 500px;
-  width: 100%;
-}
-
-.tbody__weeks {
-  display: flex;
-  font-size: 25px;
-  justify-content: space-between;
-  margin: 0 auto;
+.table__head__weeks {
   opacity: 0.7;
-  padding: 0 20px;
-  width: 100%;
 }
 
-.tbody__week {
-  font-weight: bold;
-  margin: 10px;
-  max-width: 60px;
-  text-align: center;
-  width: 100%;
-}
-
-.tbody__days {
-  display: flex;
+.table__head__week {
   font-weight: bold;
   font-size: 25px;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
+  padding: 50px 8px 8px;
 }
 
-.tbody__day {
-  box-sizing: border-box;
+.table_body {
+}
+
+.table__body__days {
   font-weight: bold;
-  margin: 10px;
-  max-width: 60px;
-  padding: 16px 0 16px;
-  text-align: center;
-  width: 100%;
+  font-size: 25px;
 }
 
-.-prev, .-next {
+.table__body__day {
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+.disabled {
   opacity: 0.3;
 }
 
@@ -99,14 +77,13 @@ table {
   border-radius: 999px;
   box-sizing: border-box;
   color: #1E90FF;
-  display: inline-block;
-  padding: 16px 0;
+  padding: 18px 0;
+  text-align: center;
 }
 
 .add {
   background-color: #1E90FF;
   margin: 0 auto;
-  max-width: 600px;
   text-align: right;
 }
 
@@ -135,19 +112,18 @@ table {
 .list {
   background-color: #1E90FF;
   margin: 0 auto;
-  max-width: 600px;
   padding-top: 30px;
   padding-bottom: 40px;
 }
 
 .list__container {
   margin: 0 auto;
+  max-width: 600px;
 }
 
 .list__items {
   background-color: #1E90FF;
   margin: 0 auto;
-  max-width: 600px;
   padding: 0  20px;
 }
 

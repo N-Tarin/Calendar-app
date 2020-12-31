@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
+  <meta charset="utf-8">
+  <title>Calendar</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
@@ -11,29 +13,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <section class="month">
-    <div class="month__items">
-
-      <span class="month__item monthPrev">
-        <i id="prev" class="fas fa-chevron-left"></i>
-      </span><!-- /.month__item monthPrev -->
-
-      <h2 id="month" class="month__item monthNow">
-      </h2><!-- /.month__item monthNow -->
-
-      <span class="month__item monthNext">
-        <i id="next" class="fas fa-chevron-right"></i>
-      </span><!-- /.month__item monthNext-->
-
-    </div><!-- /.month__items -->
-  </section><!-- /.month -->
-
   <section class="calendar">
     <table class="table">
+      <thead class="table__head">
+
+        <tr class="table__head__items">
+          <th class="table__head__item monthPrev">
+            <i id="prev" class="fas fa-chevron-left"></i>
+          </th><!-- /.table__head__item -->
+
+          <th class="table__head__item monthNow" colspan="5">
+          </th><!-- /.table__head__item -->
+
+          <th class="table__head__item monthNext">
+            <i id="next" class="fas fa-chevron-right"></i>
+          </th><!-- /.table__head__item -->
+        </tr><!-- /.table__head__items -->
+
+        <tr class="table__head__weeks">
+        </tr><!-- /.table__head__weeks -->  
+      </thead><!-- /.table__head -->
+  
+      <tbody class="table__body">
+      </tbody><!-- /.table__body -->
+
+      <tfoot>
+        <tr>
+          <td id="today" colspan="7">Today</td>
+        </tr>
+      </tfoot>
     </table><!-- /. table -->
   </section><!-- /.calendar -->
-
+  
   <section class="add">
     <div class="add__buttonWrapper">
       <button class="add__button">
@@ -57,8 +68,8 @@
       </ul><!-- /.list__items -->
     </div><!-- /.list__container -->
   </section><!-- /.list -->
-    
-  <script src="./main.js"></script>
-  <script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
+
+<script src="./main.js"></script>
+<script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
 </body>
 </html>
