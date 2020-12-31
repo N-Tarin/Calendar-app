@@ -51,7 +51,7 @@ button {
 .table__head__week {
   font-weight: bold;
   font-size: 25px;
-  padding: 50px 8px 8px;
+  padding: 70px 8px 8px;
 }
 
 .table_body {
@@ -65,7 +65,7 @@ button {
 .table__body__day {
   font-weight: bold;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
 }
 
 .disabled {
@@ -77,19 +77,21 @@ button {
   border-radius: 999px;
   box-sizing: border-box;
   color: #1E90FF;
-  padding: 18px 0;
+  padding: 23px 0;
   text-align: center;
 }
 
 .add {
   background-color: #1E90FF;
   margin: 0 auto;
-  text-align: right;
+  padding-top: 40px;
 }
 
 .add__buttonWrapper {
   margin: 0 auto;
+  max-width: 500px;
   padding: 0 20px;
+  text-align: right;
 }
 
 .add__button {
@@ -118,7 +120,7 @@ button {
 
 .list__container {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .list__items {

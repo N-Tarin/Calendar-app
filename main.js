@@ -61,6 +61,7 @@ console.clear();
     return dates;
   }
 
+  //クリアする
   function clearCalendar() {
     const tbody = document.querySelector('tbody');
 
@@ -90,24 +91,24 @@ console.clear();
   }
 
   //曜日を表示
-  function renderDays() {
-    const weeks = [
-      'Sun',
-      'Mon',
-      'Tue',
-      'Wed', 
-      'Thu', 
-      'Fri', 
-      'Sat'
-    ];
-    for (let i = 0; i < weeks.length; i++) {
-      const td = document.createElement('td');
-      const tr = document.querySelector('.table__head__weeks');
-      td.classList.add('table__head__week');
-      tr.appendChild(td);
-      td.textContent = weeks[i];
-    }    
-  }
+  // function renderDays() {
+  //   const weeks = [
+  //     'Sun',
+  //     'Mon',
+  //     'Tue',
+  //     'Wed', 
+  //     'Thu', 
+  //     'Fri', 
+  //     'Sat'
+  //   ];
+  //   for (let i = 0; i < weeks.length; i++) {
+  //     const td = document.createElement('td');
+  //     const tr = document.querySelector('.table__head__weeks');
+  //     td.classList.add('table__head__week');
+  //     tr.appendChild(td);
+  //     td.textContent = weeks[i];
+  //   }    
+  // }
 
   //日付を表示
   function renderWeeks() {
@@ -149,7 +150,7 @@ console.clear();
   function createCalendar() {
     clearCalendar();
     renderTitle();
-    renderDays();
+    // renderDays();
     renderWeeks();
   }
 
@@ -175,12 +176,12 @@ console.clear();
     createCalendar();
   });
 
-  //今日を押して今日を表示
-  document.getElementById('today').addEventListener('click', () => {
-    year = today.getFullYear();
-    month = today.getMonth();
+  // //今日を押して今日を表示
+  // document.getElementById('today').addEventListener('click', () => {
+  //   year = today.getFullYear();
+  //   month = today.getMonth();
 
-    createCalendar();
-  });
+  //   createCalendar();
+  // });
   createCalendar();
 }
