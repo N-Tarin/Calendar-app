@@ -8,47 +8,46 @@ console.clear();
   let month = today.getMonth();
 
 
-  //先月の日付を作成
+  //先月の日付を取得
   function getLastMonth() {
     const dates = [];
-    const d = new Date(year, month, 0).getDate();
-    const n = new Date(year, month, 1).getDay();
+    const d = new Date(year, month, 0).getDate();//先月の末日の日付
+    const n = new Date(year, month, 1).getDay();//今月の一日目の曜日の番号
 
     for (let i = 0; i < n; i++) {
-      dates.unshift({
+      dates.unshift({ //先月分だから先頭に追加
         date: d - i,
         isToday: false,
         isDisabled: true,
       });
     }
-
     return dates;
   }
 
-  //今月の日付を作成
+  //今月の日付を取得
   function getBasicMonth() {
-    const dates = []; // date: 日付, day: 曜日
-    const lastDate = new Date(year, month + 1, 0).getDate();
+    const dates = [];
+    const lastDate = new Date(year, month + 1, 0).getDate();//（末日）翌月の一日前
 
     for (let i = 1; i <= lastDate; i++) {
-      dates.push({
+      dates.push({ //末尾に追加
         date: i,
         isToday: false,
         isDisabled: false,
       });
     }
 
+    //今日の日付のマーク
     if (year === today.getFullYear() && month === today.getMonth()) {
       dates[today.getDate() - 1].isToday = true;
     }
-
     return dates;
   }
 
-  //来月の日付を作成
+  //来月の日付を取得
   function getNextMonth() {
     const dates = [];
-    const lastDay = new Date(year, month + 1, 0).getDay();
+    const lastDay = new Date(year, month + 1, 0).getDay(); //今月の末日の曜日の番号
 
     for (let i = 1; i < 7 - lastDay; i++) {
       dates.push({
@@ -57,17 +56,7 @@ console.clear();
         isDisabled: true,
       });
     }
-
     return dates;
-  }
-
-  //クリアする
-  function clearCalendar() {
-    const tbody = document.querySelector('tbody');
-
-    while (tbody.firstChild) {
-      tbody.removeChild(tbody.firstChild);
-    }
   }
 
   //月を表示
@@ -121,7 +110,7 @@ console.clear();
     const weeksCount = dates.length / 7;
 
     for (let i = 0; i < weeksCount; i++) {
-      weeks.push(dates.splice(0, 7));
+      weeks.push(dates.splice(0, 7)); //
     }
 
     weeks.forEach(week => {
@@ -130,23 +119,31 @@ console.clear();
 
       week.forEach(date => {
         const td = document.createElement('td');
+        td.textContent = date.date;
         td.classList.add('table__body__day');
 
-        td.textContent = date.date;
         if (date.isToday) {
           td.classList.add('js__today');//今日の日付
         }
         if (date.isDisabled) {
           td.classList.add('disabled');//先月と来月の文字色
         }
-
         tr.appendChild(td);
       });
       document.querySelector('tbody').appendChild(tr);
     });
   }
+  
+  //クリアする
+  function clearCalendar() {
+    const tbody = document.querySelector('tbody');
 
-  //もろもろ表示
+    while (tbody.firstChild) { //tbodyの最初の子要素がある限り
+      tbody.removeChild(tbody.firstChild); //tbodyから最初の子要素を削除する
+    }
+  }  
+
+  //表示する関数
   function createCalendar() {
     clearCalendar();
     renderTitle();
@@ -157,10 +154,10 @@ console.clear();
   //先月のカレンダーを表示
   const prev = document.getElementById('prev');
   prev.addEventListener('click', () => {
-    month--;
-    if (month < 0) {
+    month--; //monthから1引く
+    if (month < 0) { //1月より前に戻すとき
       year--;
-      month = 11;
+      month = 11; //12月に戻す
     }
     createCalendar();
   });
@@ -169,9 +166,9 @@ console.clear();
   const next = document.getElementById('next');
   next.addEventListener('click', () => {
     month++;
-    if (month > 11) {
+    if (month > 11) { //12月を超えたら
       year++;
-      month = 0;
+      month = 0; //一月に戻す
     }
     createCalendar();
   });
