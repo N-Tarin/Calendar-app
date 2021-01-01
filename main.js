@@ -187,10 +187,56 @@ console.clear();
   //予定を書き込む
   document.addEventListener('click', (e) => {
     if(e.target.classList.contains('table__body__day')) {
+      
+    const addMenu = document.querySelector('.add__menu');
+    const addNav = document.querySelector('.add__nav');
+      
+    // クローズボタン
+    const close = document.createElement('button');
+    close.classList.add('add__menu__close');
+    close.addEventListener('click', () => {
+      addMenu.remove();
+    });
 
-      const 
+    // テキストボックス
+    const input = document.createElement('input');
+    input.classList.add('add__menu__input');
+    input.placeholder = 'Add title';
 
-      alert(e.target.dataset.date + 'です')
+    //保存ボタン
+    const save = document.createElement('input');
+    save.classList.add('add__menu__save');
+    save.value = 'Save';
+    save.type = 'button';
+
+    save.addEventListener('click', () => {
+
+      // リストつくる
+      const li = document.createElement('li');
+      li.classList.add('list__item');
+
+      const ul = document.createElement('ul');
+      ul.classList.add('list__itemWrapper');
+
+      const liDate = document.createElement('li');
+      liDate.classList.add('list__item__date');
+
+      const liTitle = document.createElement('li');
+      liTitle.classList.add('list__item__title');
+      
+      liDate.innerHTML = e.target.dataset.date + '<span class="date">th</span>';
+      liTitle.innerHTML = input.value;
+      
+      const listItems = document.querySelector('.list__items');
+      ul.appendChild(liDate);
+      ul.appendChild(liTitle);
+      li.appendChild(ul);
+      listItems.appendChild(li);
+    });  
+    
+    addNav.appendChild(close);
+    addNav.appendChild(save);
+    addMenu.appendChild(input);
     }
   });
 

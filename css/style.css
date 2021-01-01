@@ -2,6 +2,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  position: relative;
 }
 
 button {
@@ -21,9 +22,6 @@ button {
 .table {
   border-collapse: collapse;
   margin: 0 auto;
-}
-
-.table__head {
 }
 
 .table__head__items {
@@ -88,29 +86,75 @@ button {
   padding-top: 10px;
 }
 
-.add__buttonWrapper {
+.addWrapper {
   margin: 0 auto;
   max-width: 500px;
   padding: 0 20px;
   text-align: right;
 }
 
-.add__button {
-  background-color: white;
-  border-radius: 999px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-  color: #1E90FF;
-  display: inline-block;
-  font-size: 65px;
-  outline: none;
-  padding: 0 17px;
+.add__menu {
+  display: flex;
+  flex-direction: column;
+  background-color:rgba(255,255,255,0.9);
+  border-radius: 20px;
+  width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
-.add__button:hover {
-  border-radius: 99px;
-  display: inline-block;
-  height: auto;
+.add__nav {
+  position: relative;
 }
+
+.add__menu__close::after {
+  display: inline-block;
+  content: '✖';
+  color: #AAAAAA;
+  font-size: 30px;
+  position: absolute;
+  left: 30px;
+  top: 23px;
+}
+
+.add__menu__save {
+  display: block;
+  background-color: #1E90FF;
+  color: white;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 10px 30px;
+  font-size: 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.add__menu__input {
+  display: block;
+  width: 400px;
+  height: 65px;
+  margin: 20px auto 50px;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  /* color: #CCCCCC; */
+  background-color:rgba(255,255,255,0.9);
+  border-radius: 10px;
+}
+
+.add__menu__input::placeholder {
+  opacity: 0.4;
+  padding-left: 10px;
+}
+
 
 .list {
   background-color: #1E90FF;
@@ -134,11 +178,10 @@ button {
   align-items: center;
   border-bottom: 2px solid #DDDDDD;
   background-color: white;
+  color: #003466;
   font-size: 25px;  
   height: 100px;
   margin: 0 auto;
-  padding: 40px 0 0 30px;
-  
 }
 
 .list__item:first-child {
@@ -148,5 +191,28 @@ button {
 .list__item:last-child {
   border-radius: 0 0 10px 10px;
   }
+
+.list__itemWrapper {
+  display: flex;
+}
+
+.list__item__date {
+  padding: 30px;
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 0.8;
+  background-color: rgb(224, 223, 223);
+  border-radius: 0 0 0 10px;
+}
+
+.date {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.list__item__title {
+  padding-top: 35px;
+  padding-left: 10px;
+}
 
 
