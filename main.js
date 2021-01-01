@@ -110,7 +110,7 @@ console.clear();
     const weeksCount = dates.length / 7;
 
     for (let i = 0; i < weeksCount; i++) {
-      weeks.push(dates.splice(0, 7)); //
+      weeks.push(dates.splice(0, 7));
     }
 
     weeks.forEach(week => {
@@ -121,6 +121,9 @@ console.clear();
         const td = document.createElement('td');
         td.textContent = date.date;
         td.classList.add('table__body__day');
+        
+        td.dataset.date = date.date; //クリックした日付取得
+
 
         if (date.isToday) {
           td.classList.add('js__today');//今日の日付
@@ -181,5 +184,16 @@ console.clear();
   //   createCalendar();
   // });
 
+  //予定を書き込む
+  document.addEventListener('click', (e) => {
+    if(e.target.classList.contains('table__body__day')) {
+
+      const 
+
+      alert(e.target.dataset.date + 'です')
+    }
+  });
+
   createCalendar();
 }
+

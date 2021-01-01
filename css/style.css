@@ -63,6 +63,7 @@ button {
 }
 
 .table__body__day {
+  cursor: pointer;
   font-weight: bold;
   text-align: center;
   padding: 20px;
