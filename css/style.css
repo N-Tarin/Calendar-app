@@ -68,6 +68,10 @@ button {
   padding: 20px;
 }
 
+.table__body__day:hover {
+  opacity: 0.6;
+}
+
 .disabled {
   opacity: 0.3;
 }
