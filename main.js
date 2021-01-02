@@ -192,8 +192,10 @@ console.clear();
     const addNav = document.querySelector('.add__nav');
       
     // クローズボタン
-    const close = document.createElement('button');
+    const close = document.createElement('input');
     close.classList.add('add__menu__close');
+    close.value = '✖';
+    close.type = 'button';
     close.addEventListener('click', () => {
       addMenu.remove();
     });

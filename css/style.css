@@ -1,22 +1,26 @@
 @charset "utf-8";
 body {
-  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
   position: relative;
 }
 
 button {
-  cursor: pointer;
   border: none;
+  cursor: pointer;
   outline: none;
 }
 
-.calendar {
+.main  {
   background-color: #1E90FF;
   border-radius: 99px 99px 0 0;
   color: white;
+  height: 100vw;
   margin: 0 auto;
-  padding-top: 100px;
+}
+
+.calendar {
+  padding-top: 60px;
 }
 
 .table {
@@ -50,9 +54,6 @@ button {
   font-weight: bold;
   font-size: 25px;
   padding: 70px 8px 8px;
-}
-
-.table_body {
 }
 
 .table__body__days {
@@ -94,60 +95,57 @@ button {
 }
 
 .add__menu {
-  display: flex;
-  flex-direction: column;
   background-color:rgba(255,255,255,0.9);
-  border-radius: 20px;
-  width: 500px;
+  border-radius: 10px;
   margin: 0 auto;
   position: absolute;
   top: 200px;
   left: 0;
   right: 0;
+  width: 520px;
   z-index: 2;
 }
 
 .add__nav {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
-.add__menu__close::after {
-  display: inline-block;
-  content: '✖';
+.add__menu__close {
+  background-color: transparent;
+  border: none;
   color: #AAAAAA;
+  cursor: pointer;
   font-size: 30px;
-  position: absolute;
-  left: 30px;
-  top: 23px;
+  margin-left: 10px;
+  outline: none;
 }
 
 .add__menu__save {
-  display: block;
   background-color: #1E90FF;
-  color: white;
-  /* text-align: center; */
-  margin-left: auto;
-  margin-right: 20px;
-  padding: 10px 30px;
-  font-size: 25px;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
   border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-right: 10px;
+  outline: none;
+  padding: 10px 30px;
 }
 
 .add__menu__input {
-  display: block;
-  width: 400px;
-  height: 65px;
-  margin: 20px auto 50px;
-  font-size: 30px;
-  outline: none;
+  background-color:rgba(255,255,255,0.9);
   border: none;
   border-bottom: 2px solid #CCCCCC;
-  /* color: #CCCCCC; */
-  background-color:rgba(255,255,255,0.9);
   border-radius: 10px;
+  display: block;
+  font-size: 30px;
+  height: 65px;
+  margin: 20px auto 50px;
+  outline: none;
+  width: 400px;
 }
 
 .add__menu__input::placeholder {
@@ -197,12 +195,12 @@ button {
 }
 
 .list__item__date {
-  padding: 30px;
+  background-color: rgb(224, 223, 223);
+  border-radius: 0 0 0 10px;
   font-size: 40px;
   font-weight: 700;
   opacity: 0.8;
-  background-color: rgb(224, 223, 223);
-  border-radius: 0 0 0 10px;
+  padding: 30px;
 }
 
 .date {

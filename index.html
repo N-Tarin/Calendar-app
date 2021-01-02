@@ -13,78 +13,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="calendar">
-    <table class="table">
-      <thead class="table__head">
+  <main class="main">
+    <section class="calendar">
+      <table class="table">
+        <thead class="table__head">
+          
+          <tr class="table__head__items">
+            <th class="table__head__item monthPrev">
+              <i id="prev" class="fas fa-chevron-left"></i>
+            </th><!-- /.table__head__item -->
 
-        <tr class="table__head__items">
-          <th class="table__head__item monthPrev">
-            <i id="prev" class="fas fa-chevron-left"></i>
-          </th><!-- /.table__head__item -->
+            <th class="table__head__item monthNow" colspan="5">
+            </th><!-- /.table__head__item -->
 
-          <th class="table__head__item monthNow" colspan="5">
-          </th><!-- /.table__head__item -->
+            <th class="table__head__item monthNext">
+              <i id="next" class="fas fa-chevron-right"></i>
+            </th><!-- /.table__head__item -->
+          </tr><!-- /.table__head__items -->
 
-          <th class="table__head__item monthNext">
-            <i id="next" class="fas fa-chevron-right"></i>
-          </th><!-- /.table__head__item -->
-        </tr><!-- /.table__head__items -->
+          <tr class="table__head__weeks">
+            <th class="table__head__week">
+              Sun
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Mon
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Tue
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Wed
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Thu
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Fri
+            </th><!-- /.table__head__week -->
+            <th class="table__head__week">
+              Sat
+            </th><!-- /.table__head__week -->
+          </tr><!-- /.table__head__weeks -->  
+        </thead><!-- /.table__head -->
+      
+        <tbody class="table__body">
+        </tbody><!-- /.table__body -->
 
-        <tr class="table__head__weeks">
-          <th class="table__head__week">
-            Sun
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Mon
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Tue
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Wed
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Thu
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Fri
-          </th><!-- /.table__head__week -->
-          <th class="table__head__week">
-            Sat
-          </th><!-- /.table__head__week -->
-        </tr><!-- /.table__head__weeks -->  
-      </thead><!-- /.table__head -->
+        <tfoot>
+          <tr>
+            <!-- <td id="today" class="todayBtn" colspan="7">Today</td> -->
+          </tr>
+        </tfoot>
+      </table><!-- /. table -->
+    </section><!-- /.calendar -->
   
-      <tbody class="table__body">
-      </tbody><!-- /.table__body -->
+    <section class="add">
+      <div class="addWrapper">
+        <form class="add__menu">
+          <div class="add__nav">
+          </div><!-- /.add__nav -->
+        </form><!-- /.add__menu -->
+      </div><!-- /.add__buttonWrapper -->
+    </section><!-- /.add -->
 
-      <tfoot>
-        <tr>
-          <!-- <td id="today" class="todayBtn" colspan="7">Today</td> -->
-        </tr>
-      </tfoot>
-    </table><!-- /. table -->
-  </section><!-- /.calendar -->
   
-  <section class="add">
-    <div class="addWrapper">
-      <form class="add__menu">
-        <div class="add__nav">
-        </div><!-- /.add__nav -->
-      </form><!-- /.add__menu -->
-    </div><!-- /.add__buttonWrapper -->
-  </section><!-- /.add -->
+  
+    <section class="list">
+      <div class="list__container">
+        <ul class="list__items">
+        </ul><!-- /.list__items -->
+      </div><!-- /.list__container -->
+    </section><!-- /.list -->
+  </main><!-- /.main -->
 
-
-
-  <section class="list">
-    <div class="list__container">
-      <ul class="list__items">
-      </ul><!-- /.list__items -->
-    </div><!-- /.list__container -->
-  </section><!-- /.list -->
-
-<script src="./main.js"></script>
-<script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+  <script src="https://kit.fontawesome.com/59f9f0717a.js" crossorigin="anonymous"></script>
 </body>
 </html>
