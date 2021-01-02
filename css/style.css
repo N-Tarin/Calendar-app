@@ -195,20 +195,23 @@ button {
 }
 
 .list__item__date {
-  background-color: rgb(224, 223, 223);
+  background-color: #EEEEEE;
   border-radius: 0 0 0 10px;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 700;
+  line-height: 1.4;
   opacity: 0.8;
-  padding: 30px;
+  padding: 15px;
 }
 
 .date {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .list__item__title {
+  font-weight: 600;
+  opacity: 0.8;
   padding-top: 35px;
   padding-left: 10px;
 }

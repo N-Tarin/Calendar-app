@@ -6,16 +6,31 @@ console.clear();
   const today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth();
+  let months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];    
 
 
-  //Get the date of last month.
+
+  //先月の日付を取得
   function getLastMonth() {
     const dates = [];
     const d = new Date(year, month, 0).getDate();//先月の末日の日付
     const n = new Date(year, month, 1).getDay();//今月の一日目の曜日の番号
 
     for (let i = 0; i < n; i++) {
-      dates.unshift({
+      dates.unshift({ //先月分だから先頭に追加
         date: d - i,
         isToday: false,
         isDisabled: true,
@@ -24,27 +39,27 @@ console.clear();
     return dates;
   }
 
-  //Get the date of this month.
+  //今月の日付を取得
   function getBasicMonth() {
     const dates = [];
     const lastDate = new Date(year, month + 1, 0).getDate();//（末日）翌月の一日前
 
     for (let i = 1; i <= lastDate; i++) {
-      dates.push({
+      dates.push({ //末尾に追加
         date: i,
         isToday: false,
         isDisabled: false,
       });
     }
 
-    //Get today's date
+    //今日の日付のマーク
     if (year === today.getFullYear() && month === today.getMonth()) {
       dates[today.getDate() - 1].isToday = true;
     }
     return dates;
   }
 
-  //Get the date of next month.
+  //来月の日付を取得
   function getNextMonth() {
     const dates = [];
     const lastDay = new Date(year, month + 1, 0).getDay(); //今月の末日の曜日の番号
@@ -59,27 +74,13 @@ console.clear();
     return dates;
   }
 
-  //show the month
+  //月を表示
   function renderTitle() {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];    
     const titleMonth = document.querySelector('.monthNow');
     titleMonth.textContent = months[month];
   }
 
-  //show the days
+  //曜日を表示
   // function renderDays() {
   //   const weeks = [
   //     'Sun',
@@ -99,7 +100,7 @@ console.clear();
   //   }    
   // }
 
-  //show the date
+  //日付を表示
   function renderWeeks() {
     const dates = [
       ...getLastMonth(),
@@ -124,12 +125,11 @@ console.clear();
         
         td.dataset.date = date.date; //クリックした日付取得
 
-
         if (date.isToday) {
-          td.classList.add('js__today');//today's date
+          td.classList.add('js__today');//今日の日付
         }
         if (date.isDisabled) {
-          td.classList.add('disabled');//last and next month's date
+          td.classList.add('disabled');//先月と来月の文字色
         }
         tr.appendChild(td);
       });
@@ -137,7 +137,7 @@ console.clear();
     });
   }
   
-  //clear
+  //クリアする
   function clearCalendar() {
     const tbody = document.querySelector('tbody');
 
@@ -146,7 +146,7 @@ console.clear();
     }
   }  
 
-  //Show the calendar
+  //表示する関数
   function createCalendar() {
     clearCalendar();
     renderTitle();
@@ -154,36 +154,44 @@ console.clear();
     renderWeeks();
   }
 
-  //Show last month's calendar
+  //先月のカレンダーを表示
   const prev = document.getElementById('prev');
   prev.addEventListener('click', () => {
-    month--; 
+    month--; //monthから1引く
     if (month < 0) { //1月より前に戻すとき
       year--;
-      month = 11; //back to Dec
+      month = 11; //12月に戻す
     }
     createCalendar();
   });
 
-  //Show next month's calendar
+  //来月のカレンダーを表示
   const next = document.getElementById('next');
   next.addEventListener('click', () => {
     month++;
     if (month > 11) { //12月を超えたら
       year++;
-      month = 0; //back to Jan
+      month = 0; //一月に戻す
     }
     createCalendar();
   });
 
-  //Write a schedule
+  // //今日を押して今日を表示
+  // document.getElementById('today').addEventListener('click', () => {
+  //   year = today.getFullYear();
+  //   month = today.getMonth();
+
+  //   createCalendar();
+  // });
+
+  //予定を書き込む
   document.addEventListener('click', (e) => {
     if(e.target.classList.contains('table__body__day')) {
       
     const addMenu = document.querySelector('.add__menu');
     const addNav = document.querySelector('.add__nav');
       
-    // Close button
+    // クローズボタン
     const close = document.createElement('input');
     close.classList.add('add__menu__close');
     close.value = '✖';
@@ -192,7 +200,7 @@ console.clear();
       addMenu.remove();
     });
 
-    //Save button
+    //保存ボタン
     const save = document.createElement('input');
     save.classList.add('add__menu__save');
     save.value = 'Save';
@@ -200,7 +208,7 @@ console.clear();
     
     save.addEventListener('click', () => {
       
-      // Make a list
+      // リストつくる
       const li = document.createElement('li');
       li.classList.add('list__item');
       
@@ -208,13 +216,13 @@ console.clear();
       ul.classList.add('list__itemWrapper');
       
       const liDate = document.createElement('li');
-      liDate.classList.add('list__item__date'); //Date
+      liDate.classList.add('list__item__date');
       
       const liTitle = document.createElement('li');
-      liTitle.classList.add('list__item__title'); //Detail
+      liTitle.classList.add('list__item__title');
       
-      //Show the title
-      liDate.innerHTML = e.target.dataset.date + '<span class="date">th</span>';
+      let listMonths = months.slice( 0, 3 ); //三文字取得
+      liDate.innerHTML = listMonths + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
       liTitle.innerHTML = input.value;
       
       const listItems = document.querySelector('.list__items');
@@ -226,7 +234,7 @@ console.clear();
       addMenu.remove();
     });  
 
-    // Add title
+    // テキストボックス
     const input = document.createElement('input');
     input.classList.add('add__menu__input');
     input.placeholder = 'Add title';
