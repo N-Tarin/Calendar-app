@@ -221,8 +221,8 @@ console.clear();
       const liTitle = document.createElement('li');
       liTitle.classList.add('list__item__title');
       
-      let listMonths = months.slice( 0, 3 ); //三文字取得
-      liDate.innerHTML = listMonths + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
+      // let listMonths = months.slice( 0, 3 ); //三文字取得
+      liDate.innerHTML = months[month] + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
       liTitle.innerHTML = input.value;
       
       const listItems = document.querySelector('.list__items');
