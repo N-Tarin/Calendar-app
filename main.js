@@ -186,83 +186,86 @@ console.clear();
   document.addEventListener('click', (e) => {
     if(e.target.classList.contains('table__body__day')) {
       
-    const addMenu = document.querySelector('.add__menu');
-    const addNav = document.querySelector('.add__nav');
-      
-    // Close button
-    const close = document.createElement('input');
-    close.classList.add('add__menu__close');
-    close.value = '✖';
-    close.type = 'button';
-    close.addEventListener('click', () => {
-      
-      // addMenu.remove();
+      const addMenu = document.querySelector('.add__menu');
+      const addNav = document.querySelector('.add__nav');
+        
+      // Hide the list Message  
+      const hideList = document.querySelector('.list__message');
+      hideList.style.display = 'none';
+
+      // Close button
+      const close = document.createElement('input');
+      close.classList.add('add__menu__close');
+      close.value = '✖';
+      close.type = 'button';
+      close.addEventListener('click', () => {
+        
       addMenu.removeChild(input);
       addNav.removeChild(close);
       addNav.removeChild(save);
-    });
+      });
 
-    //  Save button
-    const save = document.createElement('input');
-    save.classList.add('add__menu__save');
-    save.value = 'Save';
-    save.type = 'button';
-    
-    save.addEventListener('click', () => {
-
-      // error 
-      if (input.value == '') {
-        // const errorMessage = document.createElement('p');
-        // errorMessage.textContent = 'write something';
-        // errorMessage.style.color = 'red';
-
-        // const form = document.querySelector('.add__menu');
-        // const addMenu = document.querySelector('.add__nav');
-        // form.insertBefore(errorMessage, addMenu);
-
-        alert('write something!!');
-
-        
-      } else {
-        // Make a list
-        const li = document.createElement('li');
-        li.classList.add('list__item');
+      // Save button
+      const save = document.createElement('input');
+      save.classList.add('add__menu__save');
+      save.value = 'Save';
+      save.type = 'button';
       
-        const ul = document.createElement('ul');
-        ul.classList.add('list__itemWrapper');
-        
-        const liDate = document.createElement('li');
-        liDate.classList.add('list__item__date');
-        
-        const liTitle = document.createElement('li');
-        liTitle.classList.add('list__item__title');
-        
-        let listMonths = months[month].substring( 0, 3 ); //get the first three letters of month
-        liDate.innerHTML = listMonths + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
-        liTitle.innerHTML = input.value;
-        
-        const listItems = document.querySelector('.list__items');
-        ul.appendChild(liDate);
-        ul.appendChild(liTitle);
-        li.appendChild(ul);
-        listItems.appendChild(li);
+      save.addEventListener('click', () => {
 
-        // addMenu.remove();
-        addMenu.removeChild(input);
-        addNav.removeChild(close);
-        addNav.removeChild(save);
-      }
-    });  
-    
-    // Add title
-    const input = document.createElement('input');
-    input.classList.add('add__menu__input');
-    input.placeholder = 'Add title';
-    
-    addNav.appendChild(close);
-    addNav.appendChild(save);
-    addMenu.appendChild(input);
-  }
+        // error 
+        if (input.value == '') {
+          alert('write something!!');
+          
+        } else {
+          // Make a list
+          const li = document.createElement('li');
+          li.classList.add('list__item');
+        
+          const ul = document.createElement('ul');
+          ul.classList.add('list__itemWrapper');
+          
+          const liDate = document.createElement('li');
+          liDate.classList.add('list__item__date');
+          
+          const liTitle = document.createElement('li');
+          liTitle.classList.add('list__item__title');
+          
+          let listMonths = months[month].substring( 0, 3 ); // Get the first three letters of month
+          liDate.innerHTML = listMonths + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
+          liTitle.innerHTML = input.value;
+          
+          const listItems = document.querySelector('.list__items');
+          ul.appendChild(liDate);
+          ul.appendChild(liTitle);
+          li.appendChild(ul);
+          listItems.appendChild(li);
+
+          // Delete button
+          const deleteBtn = document.createElement('button');
+          deleteBtn.className = 'deleteIcon';
+          li.appendChild(deleteBtn);
+          
+          deleteBtn.addEventListener(('click'), () => {
+            const deleteLi = deleteBtn.closest('li');
+            deleteLi.remove();
+          });
+
+          addMenu.removeChild(input);
+          addNav.removeChild(close);
+          addNav.removeChild(save);
+        }
+      });  
+      
+      // Add title
+      const input = document.createElement('input');
+      input.classList.add('add__menu__input');
+      input.placeholder = 'Add title';
+      
+      addNav.appendChild(close);
+      addNav.appendChild(save);
+      addMenu.appendChild(input);
+    }
   });
 
   createCalendar();
