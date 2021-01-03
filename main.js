@@ -21,8 +21,6 @@ console.clear();
     'December',
   ];    
 
-
-
   //Get the date of last month.
   function getLastMonth() {
     const dates = [];
@@ -197,7 +195,11 @@ console.clear();
     close.value = '✖';
     close.type = 'button';
     close.addEventListener('click', () => {
-      addMenu.remove();
+      
+      // addMenu.remove();
+      addMenu.removeChild(input);
+      addNav.removeChild(close);
+      addNav.removeChild(save);
     });
 
     //  Save button
@@ -207,33 +209,51 @@ console.clear();
     save.type = 'button';
     
     save.addEventListener('click', () => {
-      
-      // Make a list
-      const li = document.createElement('li');
-      li.classList.add('list__item');
-      
-      const ul = document.createElement('ul');
-      ul.classList.add('list__itemWrapper');
-      
-      const liDate = document.createElement('li');
-      liDate.classList.add('list__item__date');
-      
-      const liTitle = document.createElement('li');
-      liTitle.classList.add('list__item__title');
-      
-      // let listMonths = months.slice( 0, 3 ); //三文字取得
-      liDate.innerHTML = months[month] + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
-      liTitle.innerHTML = input.value;
-      
-      const listItems = document.querySelector('.list__items');
-      ul.appendChild(liDate);
-      ul.appendChild(liTitle);
-      li.appendChild(ul);
-      listItems.appendChild(li);
 
-      addMenu.remove();
+      // error 
+      if (input.value == '') {
+        // const errorMessage = document.createElement('p');
+        // errorMessage.textContent = 'write something';
+        // errorMessage.style.color = 'red';
+
+        // const form = document.querySelector('.add__menu');
+        // const addMenu = document.querySelector('.add__nav');
+        // form.insertBefore(errorMessage, addMenu);
+
+        alert('write something!!');
+
+        
+      } else {
+        // Make a list
+        const li = document.createElement('li');
+        li.classList.add('list__item');
+      
+        const ul = document.createElement('ul');
+        ul.classList.add('list__itemWrapper');
+        
+        const liDate = document.createElement('li');
+        liDate.classList.add('list__item__date');
+        
+        const liTitle = document.createElement('li');
+        liTitle.classList.add('list__item__title');
+        
+        let listMonths = months[month].substring( 0, 3 ); //get the first three letters of month
+        liDate.innerHTML = listMonths + '<br>' + e.target.dataset.date + '<span class="date">th</span>';
+        liTitle.innerHTML = input.value;
+        
+        const listItems = document.querySelector('.list__items');
+        ul.appendChild(liDate);
+        ul.appendChild(liTitle);
+        li.appendChild(ul);
+        listItems.appendChild(li);
+
+        // addMenu.remove();
+        addMenu.removeChild(input);
+        addNav.removeChild(close);
+        addNav.removeChild(save);
+      }
     });  
-
+    
     // Add title
     const input = document.createElement('input');
     input.classList.add('add__menu__input');

@@ -12,7 +12,7 @@ button {
 }
 
 .main  {
-  background-color: #1E90FF;
+  background-color: #0c77e2;
   border-radius: 99px 99px 0 0;
   color: white;
   height: 100vw;
@@ -52,8 +52,9 @@ button {
 
 .table__head__week {
   font-weight: bold;
-  font-size: 25px;
-  padding: 70px 8px 8px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  padding: 70px 0px 8px;
 }
 
 .table__body__days {
@@ -69,7 +70,11 @@ button {
 }
 
 .table__body__day:hover {
-  opacity: 0.6;
+  background-color: rgb(22, 83, 136, 0.4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
 }
 
 .disabled {
@@ -78,15 +83,14 @@ button {
 
 .js__today {
   background-color: white;
-  border-radius: 999px;
+  border-radius: 10px;
   box-sizing: border-box;
-  color: #1E90FF;
-  padding: 23px 0;
+  color: #0c77e2;
   text-align: center;
 }
 
 .add {
-  background-color: #1E90FF;
+  background-color: #0c77e2;
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -99,7 +103,7 @@ button {
 }
 
 .add__menu {
-  background-color:rgba(255,255,255,0.9);
+  background-color:rgba(255,255,255);
   border-radius: 10px;
   margin: 0 auto;
   position: absolute;
@@ -118,15 +122,15 @@ button {
 .add__menu__close {
   background-color: transparent;
   border: none;
-  color: #AAAAAA;
+  color: #888888	;
   cursor: pointer;
   font-size: 30px;
-  margin-left: 10px;
+  margin-left: 20px;
   outline: none;
 }
 
 .add__menu__save {
-  background-color: #1E90FF;
+  background-color: #0c77e2;
   border: none;
   border-radius: 10px;
   color: white;
@@ -134,7 +138,7 @@ button {
   display: block;
   font-size: 25px;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
   outline: none;
   padding: 10px 30px;
 }
@@ -143,7 +147,6 @@ button {
   background-color:rgba(255,255,255,0.9);
   border: none;
   border-bottom: 2px solid #CCCCCC;
-  border-radius: 10px;
   display: block;
   font-size: 30px;
   height: 65px;
@@ -157,9 +160,8 @@ button {
   padding-left: 10px;
 }
 
-
 .list {
-  background-color: #1E90FF;
+  background-color: #0c77e2;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 40px;
@@ -171,16 +173,16 @@ button {
 }
 
 .list__items {
-  background-color: #1E90FF;
+  background-color: #0c77e2;
   margin: 0 auto;
   padding: 0  20px;
 }
 
 .list__item {
   align-items: center;
-  border-bottom: 2px solid #DDDDDD;
+  border-bottom: 2px solid #EEEEEE;
   background-color: white;
-  color: #003466;
+  color: #011f3b;
   font-size: 25px;  
   height: 100px;
   margin: 0 auto;
@@ -200,12 +202,22 @@ button {
 
 .list__item__date {
   background-color: #EEEEEE;
-  border-radius: 0 0 0 10px;
+  border-radius: 0 0 10px 10px;
   font-size: 25px;
   font-weight: 700;
   line-height: 1.4;
   opacity: 0.8;
-  padding: 15px;
+  padding: 15px 0;
+  text-align: center;
+  width: 120px;
+}
+
+.list__item__date:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+.list__item__date:last-child {
+  border-radius: 0 0 0 10px;
 }
 
 .date {
