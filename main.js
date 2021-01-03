@@ -174,14 +174,7 @@ console.clear();
     createCalendar();
   });
 
-  // //今日を押して今日を表示
-  // document.getElementById('today').addEventListener('click', () => {
-  //   year = today.getFullYear();
-  //   month = today.getMonth();
-
-  //   createCalendar();
-  // });
-
+  
   //write a schedule
   document.addEventListener('click', (e) => {
     if(e.target.classList.contains('table__body__day')) {
